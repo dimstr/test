@@ -19,7 +19,7 @@ imgRef.getMetadata()
     console.log(date.getFullYear()+'-' + (date.getMonth()+1) + '-'+date.getDate());
     console.log(date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
     var time = (date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
-    var writtenDate = (date.getFullYear()+'-' + (date.getMonth()+1) + '-'+date.getDate());
+    var writtenDate = (date.getDate() + '-' + (date.getMonth()+1)  + '-' + date.getFullYear());
     document.getElementById("date-time").innerHTML = writtenDate + " в " + time;
   })
   .catch((error)=> {
