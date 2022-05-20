@@ -13,3 +13,15 @@ html {
   body {  
     margin: 0;
   }
+
+@media screen and (max-width: 500){
+  img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 501){
+  img {
+    width: 500px;
+  }
+}
