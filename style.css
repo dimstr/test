@@ -14,13 +14,11 @@ html {
     margin: 0;
   }
 
-@media screen and (max-width: 500){
-  img {
-    width: 100%;
-  }
+img {
+  width: 100%;
 }
 
-@media screen and (min-width: 501){
+@media screen and (min-width: 500px){
   img {
     width: 500px;
   }
