@@ -1,5 +1,5 @@
 var imgRef_01 = storageRef.child('data/photo_01.jpg');
-var imgRef_02 = storageRef.child('data/photo_01.jpg');
+var imgRef_02 = storageRef.child('data/photo_02.jpg');
 
 
 firebase.auth().signInAnonymously().then(function () {
