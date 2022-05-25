@@ -1,20 +1,38 @@
-var imgRef = storageRef.child('data/photo_01.jpg');
+var imgRef_01 = storageRef.child('data/photo_01.jpg');
+var imgRef_02 = storageRef.child('data/photo_01.jpg');
 
-firebase.auth().signInAnonymously().then(function() {
-  imgRef.getDownloadURL().then(function(url){
-    document.querySelector('img').src = url;
-  }).catch(function(error) {
+
+firebase.auth().signInAnonymously().then(function () {
+  imgRef_01.getDownloadURL().then(function (url) {
+    document.querySelector('img_01').src = url;
+  }).catch(function (error) {
+    console.error(error);
+  });
+  imgRef_02.getDownloadURL().then(function (url) {
+    document.querySelector('img_02').src = url;
+  }).catch(function (error) {
     console.error(error);
   });
 });
 
-imgRef.getMetadata()
+imgRef_01.getMetadata()
   .then((metadata) => {
     date = new Date(metadata.timeCreated);
-    var time = (date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
-    var writtenDate = (date.getDate() + '-' + (date.getMonth()+1)  + '-' + date.getFullYear());
-    document.getElementById("date-time").innerHTML = writtenDate + " в " + time;
+    var time_01 = (date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
+    var writtenDate_01 = (date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear());
+    document.getElementById("date-time_01").innerHTML = writtenDate_01 + " в " + time_01;
   })
-  .catch((error)=> {
+  .catch((error) => {
+    console.error(error);
+  });
+
+imgRef_02.getMetadata()
+  .then((metadata) => {
+    date = new Date(metadata.timeCreated);
+    var time_02 = (date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
+    var writtenDate_02 = (date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear());
+    document.getElementById("date-time_02").innerHTML = writtenDate_02 + " в " + time_02;
+  })
+  .catch((error) => {
     console.error(error);
   });
