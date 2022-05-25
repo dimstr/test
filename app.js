@@ -1,4 +1,4 @@
-var imgRef = storageRef.child('data/photo.jpg');
+var imgRef = storageRef.child('data/photo_01.jpg');
 
 firebase.auth().signInAnonymously().then(function() {
   imgRef.getDownloadURL().then(function(url){
